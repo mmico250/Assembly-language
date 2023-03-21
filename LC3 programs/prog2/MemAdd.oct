@@ -1,0 +1,28 @@
+	04000
+	0000000000000000	;.fill 
+	0000000000000002	;.fill 2 octal	;4001
+	0000000000000004	;.fill 4 octal	;4002
+	0000000000000005	;.fill  5 octal	;4003
+	0000000000000007	;.fill  7 octal	;4004
+	0000000000000001	;.fill  1 octal	;4005
+	7777777777777771	;.fill -6 decimal	;4006
+	7777777777777777	;.fill  -0 octal, the sentinal	;4007
+
+
+	;4010;load from start adress		;check if negative
+	12 0 04001				22 3 04014
+					
+	;4011;add value,store at 4000		;load start adress to r2		
+	14 0 04000				53 2 04010
+
+	;4012;increment index			;store A at 4000
+	51 2 00001				20 0 04000
+
+	;4013;replace start adress		;unconditional jump to loop(pos)
+	56 2 04010				22 2 04010
+
+	;4014; check if negative and 0		;unconditional jump to loop(neg)
+	22 0 04015				22 3 04010
+	
+	;4015 ;garbage end			;halt
+	76 4 04015				76 4 04015

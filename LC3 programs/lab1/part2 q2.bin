@@ -1,0 +1,48 @@
+0011 0000 0000 0000
+
+0001 001 000 000 000; add r0 and r0 and store it in r1
+
+0001 001 001 000 001; add r1 and r1
+
+0001 001 001 000 001; add r1 and r1
+
+0001 001 001 000 001; add r1 and r1
+
+0001 001 001 000 001; add r1 and r1
+
+0001 001 001 000 001; add r1 and r1
+
+;32x
+
+0001 010 000 000 000; add r0 and r0 and store it in r2
+
+0001 010 010 000 010; add r2 and r2
+
+0001 010 010 000 010; add r2 and r2
+
+0001 010 010 000 010; add r2 and r2
+
+0001 010 010 000 010; add r2 and r2
+
+0001 001 001 000 010 ; add 32x to 64x
+
+;4x
+
+0001 011 000 000 000; add r0 and r0 and store it in r3
+
+0001 011 011 000 011; add r3 and r3
+
+0001 001 001 000 011 ; add 4x to 32x+64x
+
+;2x
+
+0001 100 000 000 000; add r0 and r0 and store it in r2
+
+0001 001 001 000 100 ; add 2x to 4x+32x+64x
+
+;x
+
+0001 001 001 000 000; add r1 and r0 and store it in r2
+
+
+

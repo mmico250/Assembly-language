@@ -1,0 +1,29 @@
+	03000
+	0000000000000000 ;.fill at 3000
+	0000000000000103 ;C at 3001
+	0000000000000117 ;O at 3002
+	0000000000000115 ;M at 3003
+	0000000000000120 ;P at 3004
+	0000000000000125 ;U at 3005
+	0000000000000124 ;T at 3006
+	0000000000000105 ;E at 3007
+	0000000000000122 ;R at 3010
+	0000000000000000 ;.fill at 3011
+	0000000000000123 ;an S to test the program at 3012
+	0000000000000126 ;a V to test the program aat 3013
+	 
+	
+	;3014;enter into Q the mask		;load count into r1
+	04 0 00177				50 1 00010
+	;3015;load test value into A		;MTH
+	12 0 03012				67 1 03001
+	;3016; store index val at 3011		;load from 3011
+	57 1 03011				12 0 03011
+	;3017;check if search finished		;enter into Q a 1
+	22 0 03021				04 0 00001
+	;3020;store after R			;get out of program
+	21 0 o03011				23 2 03022
+	;3021 enter into Q a 0			;store after R
+	04 0 00000				21 0 03011
+	; 3022 ,garbage end			;halt
+	76 4 03022				76 4 03022
